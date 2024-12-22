@@ -9,7 +9,8 @@ module.exports = {
   content: [
     "./js/**/*.js",
     "../lib/lume_example_web.ex",
-    "../lib/lume_example_web/**/*.*ex"
+    "../lib/lume_example_web/**/*.*ex",
+    "../deps/lume/**/*.*ex"
   ],
   theme: {
     extend: {

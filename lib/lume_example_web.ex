@@ -82,6 +82,8 @@ defmodule LumeExampleWeb do
 
   defp html_helpers do
     quote do
+      use Lume
+
       # Translation
       use Gettext, backend: LumeExampleWeb.Gettext
 
