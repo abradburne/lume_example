@@ -1,19 +1,32 @@
 <.sidebar>
   <.brand title="Lume Example" logo="/images/logo.svg" />
   <.nav_items
-    items={[
-      %{
-        label: "Home",
-        nav_item: :home,
-        path: ~p"/",
-        icon: "hero-home"
-      }
-    ]}
-    current_item={:home}
+    items={LumeExampleWeb.Navigation.default_items()}
+    current_item={assigns[:current_nav_item]}
   />
 </.sidebar>
 <main class="flex flex-1 flex-col lg:min-w-0 lg:pl-72">
-  <.navbar></.navbar>
+  <.navbar>
+    {@nav_title}
+    <:right_content>
+      <.dropdown_menu id="user-menu" align={:right} size={:sm}>
+        <:trigger>
+          <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
+            <span class="sr-only">Help</span>
+            <.icon name="hero-question-mark-circle" class="h-6 w-6" />
+          </button>
+        </:trigger>
+        <:item>
+          <.link
+            navigate={~p"/things"}
+            class="w-full">
+            <.icon name="hero-information-circle" />
+            About
+          </.link>
+        </:item>
+      </.dropdown_menu>
+    </:right_content>
+  </.navbar>
   <div class="px-4 sm:px-6 lg:px-8 py-8">
     <.flash_group flash={@flash} />
     {@inner_content}

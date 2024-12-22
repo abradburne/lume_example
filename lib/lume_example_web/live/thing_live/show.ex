@@ -5,6 +5,11 @@ defmodule LumeExampleWeb.ThingLive.Show do
 
   @impl true
   def mount(_params, _session, socket) do
+    socket =
+      socket
+      |> assign(:current_nav_item, :things)
+      |> assign(:nav_title, "Things")
+
     {:ok, socket}
   end
 
