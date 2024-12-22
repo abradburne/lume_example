@@ -18,6 +18,13 @@ defmodule LumeExampleWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/things", ThingLive.Index, :index
+    live "/things/new", ThingLive.Index, :new
+    live "/things/:id/edit", ThingLive.Index, :edit
+
+    live "/things/:id", ThingLive.Show, :show
+    live "/things/:id/show/edit", ThingLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
