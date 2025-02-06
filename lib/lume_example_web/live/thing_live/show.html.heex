@@ -1,3 +1,11 @@
+<.breadcrumbs id="thing-breadcrumbs" class="mb-4">
+  <:crumb navigate={~p"/"}>
+    <.icon name="hero-home-mini" class="w-4 h-4 mr-1" /> Home
+  </:crumb>
+  <:crumb navigate={~p"/things"}>Things</:crumb>
+  <:crumb current={true}>Current Thing</:crumb>
+</.breadcrumbs>
+
 <.header>
   Thing {@thing.id}
   <:subtitle>This is a thing record from your database.</:subtitle>
@@ -14,7 +22,12 @@
 
 <.back navigate={~p"/things"}>Back to things</.back>
 
-<.modal :if={@live_action == :edit} id="thing-modal" show on_cancel={JS.patch(~p"/things/#{@thing}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="thing-modal"
+  show
+  on_cancel={JS.patch(~p"/things/#{@thing}")}
+>
   <.live_component
     module={LumeExampleWeb.ThingLive.FormComponent}
     id={@thing.id}
