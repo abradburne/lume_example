@@ -11,8 +11,7 @@ defmodule LumeExample.Application do
       LumeExampleWeb.Telemetry,
       LumeExample.Repo,
       {Ecto.Migrator,
-        repos: Application.fetch_env!(:lume_example, :ecto_repos),
-        skip: skip_migrations?()},
+       repos: Application.fetch_env!(:lume_example, :ecto_repos), skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:lume_example, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: LumeExample.PubSub},
       # Start the Finch HTTP client for sending emails

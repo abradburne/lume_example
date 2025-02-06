@@ -31,6 +31,11 @@ config :lume_example, LumeExampleWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :lume_example, LumeExample.Mailer, adapter: Swoosh.Adapters.Local
 
+# In config/config.exs of the host application
+config :lume,
+  # Replace with their app's Gettext module
+  gettext_backend: LumeExample.Gettext
+
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
