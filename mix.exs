@@ -58,7 +58,7 @@ defmodule LumeExample.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:lume, "~> 0.2.0"}
+      {:lume, "~> 0.2"}
     ]
   end
 
