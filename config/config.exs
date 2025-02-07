@@ -31,10 +31,9 @@ config :lume_example, LumeExampleWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :lume_example, LumeExample.Mailer, adapter: Swoosh.Adapters.Local
 
-# In config/config.exs of the host application
+# Configure Lume
 config :lume,
-  # Replace with their app's Gettext module
-  gettext_backend: LumeExample.Gettext
+  gettext_backend: LumeExampleWeb.Gettext
 
 # Configure esbuild (the version is required)
 config :esbuild,
